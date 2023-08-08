@@ -80,8 +80,7 @@ function Create(SSPHash, PhraseHash, passLength) {
     return result;
 }
 
-function Generate()
-{
+function Generate() {
     // Super Secure Password
     var SSP = "asdf";
 
@@ -95,4 +94,15 @@ function Generate()
     //GeneratedPassword.IsVisible = true;
 }
 
-Generate();
+// For showing the SSP
+function showSSP() {
+    var ssp = document.getElementById("SSP");
+    var check = document.getElementById("check");
+    if (ssp.type === "password") {
+        ssp.type = "text";
+        check.checked = true;
+    } else {
+        ssp.type = "password";
+        check.checked = false;
+    }
+}
