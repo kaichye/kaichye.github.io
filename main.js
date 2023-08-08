@@ -91,8 +91,8 @@ function Generate()
     // Generate password
     generated = Create(RunHashes(SSP), RunHashes(Phrase), 16);
     console.log(generated);
-    GeneratedPassword.Text =  generated;
-    GeneratedPassword.IsVisible = true;
+    //GeneratedPassword.Text =  generated;
+    //GeneratedPassword.IsVisible = true;
 }
 
 Generate();
