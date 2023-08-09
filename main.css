@@ -40,7 +40,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 540px;
+    height: 630px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -73,7 +73,7 @@ a{
 }
 label{
     display: block;
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 16px;
     font-weight: 500;
 }
@@ -175,6 +175,19 @@ button{
     to {opacity: 0;}
   }
 
+/* make arrows disappear on password length
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 
 @media (max-width: 1000px) {
     .background{
@@ -184,7 +197,7 @@ button{
 
     form{
         width: 80%;
-        height: 955px;
+        height: 1155px;
     }
 
     h1{

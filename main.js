@@ -1,7 +1,7 @@
 // Runs hash functions
 // turns into base-64 at the end
-function RunHashes(source) {
-    var tmpSource = source;
+function RunHashes(source, passLength) {
+    var tmpSource = source + toString(passLength);
     var tmpHash;
     var result;
 
@@ -93,9 +93,14 @@ function generate() {
     var SSP = document.getElementById("SSP").value;
 
     var Phrase = document.getElementById("Phrase").value;
-    var passLength = 16;
+    var passLength = Number(document.getElementById("passwordLength").value);
     var generated = ""
     
+    // Check if passLength is default
+    if (!passLength) {
+        passLength = 16;
+    }
+
     // Generate password
     generated = Create(RunHashes(SSP), RunHashes(Phrase), passLength);
 
@@ -116,6 +121,18 @@ function generate() {
     document.getElementById("password").setAttribute("style","visibility:visible");
     document.getElementById("checkPass" ).setAttribute("style","visibility:visible");
     document.getElementById("passSpan").setAttribute("style","visibility:visible");
+    document.getElementById("welcome").setAttribute("style","visibility:hidden;display:none;");
+
+    // Fix check box if checked before before
+    var check = document.getElementById("checkPass");
+    check.checked = false;
+}
+
+function lengthCheck() {
+    var length = document.getElementById("passwordLength");
+    if (Number(length.value) < 12) {
+        length.value = "12";
+    }
 }
 
 // For showing the SSP
@@ -129,6 +146,13 @@ function showSSP() {
         ssp.type = "password";
         check.checked = false;
     }
+}
+
+function SSPChange() {
+    var ssp = document.getElementById("SSP");
+    var check = document.getElementById("check");
+    ssp.type = "password";
+    check.checked = false;
 }
 
 function copyPassword() {

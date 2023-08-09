@@ -22,14 +22,17 @@
             <div class="shape"></div>
         </div>
         <form id="form">
-            <h1>Welcome to PasswordCEO!</h1>
+            <h1 id="welcome">Welcome to PasswordCEO!</h1>
             <a href="https://github.com/kaichye/kaichye.github.io" target="_blank">Info & help</a>
+
+            <label>Password Length</label>
+            <input id="passwordLength" class="field" type="number" name="quantity" min="12" placeholder="Length" onblur="lengthCheck()">
             
             <label>Phrase</label>
             <input id="Phrase" class="field" type="text" placeholder="Phrase">
 
             <label>Super Secret Password (SSP)</label>
-            <input id="SSP" class="field" type="password" placeholder="SSP">
+            <input id="SSP" class="field" type="password" placeholder="SSP" oninput="SSPChange()">
 
             <input id="check" class="check" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" type="checkbox" onclick="showSSP()">
             <span id="SSPSpan" class="checkSpan" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="showSSP()">Show SSP</span>
