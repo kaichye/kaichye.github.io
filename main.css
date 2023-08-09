@@ -40,7 +40,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 520px;
+    height: 540px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -67,6 +67,10 @@ form h3{
     text-align: center;
 }
 
+a{
+    font-size: 16px;
+    font-weight: 500;
+}
 label{
     display: block;
     margin-top: 30px;
@@ -185,6 +189,11 @@ button{
 
     h1{
         font-size: 70px;
+    }
+
+    a{
+        font-size: 30px;
+        font-weight: 500;
     }
 
     label{

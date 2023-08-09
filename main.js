@@ -102,9 +102,9 @@ function generate() {
     // make room on the form element for the password section
     form = document.getElementById("form");
     if (window.innerWidth > 1000) {
-        form.setAttribute("style","height:660px");
+        form.setAttribute("style","height:680px");
     } else {
-        form.setAttribute("style","height:1170px");
+        form.setAttribute("style","height:1200px");
     }
 
     // set the generated password
@@ -146,12 +146,6 @@ function copyPassword() {
     }, 10000);
     setTimeout(function() {
         navigator.clipboard.writeText("");
-
-         // clear everything on the page
-        document.getElementById("password").innerHTML = "";
-        document.getElementById("actualPassword").value = "";
-
-        alert("Don't forget to clear your clipboard if the auto clear didn't work!");
         popup.setAttribute("style","visibility:hidden");
     }, 11000);
 }
@@ -163,8 +157,13 @@ function showPassword() {
     if (password.innerText[0] == "•") {
         password.innerHTML = actualPass.value;
         check.checked = true;
+
+        var timeout = setTimeout(function() {
+            password.innerHTML = dots(password.innerHTML.length);
+            check.checked = false;
+        }, 60000);
     } else {
-        password.innerHTML = dots(16);
+        password.innerHTML = dots(password.innerHTML.length);
         check.checked = false;
     }
 }
