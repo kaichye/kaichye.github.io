@@ -80,18 +80,42 @@ function Create(SSPHash, PhraseHash, passLength) {
     return result;
 }
 
-function Generate() {
-    // Super Secure Password
-    var SSP = "asdf";
+function dots(passLength) {
+    var result = "";
+    for (var i = 0; i < passLength; i++) {
+        result += "•"
+    }
+    return result;
+}
 
-    var Phrase = "test";
-    var generated = "";
+function generate() {
+    // Super Secret Password
+    var SSP = document.getElementById("SSP").value;
+
+    var Phrase = document.getElementById("Phrase").value;
+    var passLength = 16;
+    var generated = ""
     
     // Generate password
-    generated = Create(RunHashes(SSP), RunHashes(Phrase), 16);
-    console.log(generated);
-    //GeneratedPassword.Text =  generated;
-    //GeneratedPassword.IsVisible = true;
+    generated = Create(RunHashes(SSP), RunHashes(Phrase), passLength);
+
+    // make room on the form element for the password section
+    form = document.getElementById("form");
+    if (window.innerWidth > 1000) {
+        form.setAttribute("style","height:660px");
+    } else {
+        form.setAttribute("style","height:1170px");
+    }
+
+    // set the generated password
+    document.getElementById("password").innerHTML = dots(passLength);
+    document.getElementById("actualPassword").value = generated;
+
+    // Make the password section visible
+    document.getElementById("passwordLabel").setAttribute("style","visibility:visible");
+    document.getElementById("password").setAttribute("style","visibility:visible");
+    document.getElementById("checkPass" ).setAttribute("style","visibility:visible");
+    document.getElementById("passSpan").setAttribute("style","visibility:visible");
 }
 
 // For showing the SSP
@@ -105,4 +129,47 @@ function showSSP() {
         ssp.type = "password";
         check.checked = false;
     }
+}
+
+function copyPassword() {
+    // Get the text field
+    var copyText = document.getElementById("actualPassword");
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    var popup = document.getElementById("myPopup");
+    popup.setAttribute("style","visibility:visible");;
+
+    setTimeout(function() {
+        popup.classList.toggle("hide");
+    }, 10000);
+    setTimeout(function() {
+        navigator.clipboard.writeText("");
+
+         // clear everything on the page
+        document.getElementById("password").innerHTML = "";
+        document.getElementById("actualPassword").value = "";
+
+        alert("Don't forget to clear your clipboard if the auto clear didn't work!");
+        popup.setAttribute("style","visibility:hidden");
+    }, 11000);
+}
+
+function showPassword() {
+    var password = document.getElementById("password");
+    var check = document.getElementById("checkPass");
+    var actualPass = document.getElementById("actualPassword");
+    if (password.innerText[0] == "•") {
+        password.innerHTML = actualPass.value;
+        check.checked = true;
+    } else {
+        password.innerHTML = dots(16);
+        check.checked = false;
+    }
+}
+
+function drag (e) {
+    var actualPass = document.getElementById("actualPassword");
+    e.dataTransfer.setData('text', actualPass.value);
 }

@@ -84,6 +84,16 @@ label{
     font-size: 14px;
     font-weight: 300;
 }
+.passField{
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 15px 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
 ::placeholder{
     color: #e5e5e5;
 }
@@ -110,6 +120,58 @@ button{
     cursor: pointer;
 }
 
+/* Popup container */
+.popup {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .hide {
+    -webkit-animation: fadeOut 1s;
+    animation: fadeOut 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+  
+  @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+
+
 @media (max-width: 1000px) {
     .background{
         width: 80%;
@@ -118,7 +180,7 @@ button{
 
     form{
         width: 80%;
-        height: 55%;
+        height: 955px;
     }
 
     h1{
@@ -128,7 +190,7 @@ button{
     label{
         display: block;
         margin-top: 30px;
-        font-size: 40px;
+        font-size: 34px;
         font-weight: 500;
     }
 
@@ -139,6 +201,17 @@ button{
         background-color: rgba(255,255,255,0.07);
         border-radius: 3px;
         padding: 0 10px;
+        margin-top: 8px;
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+    .passField{
+        height: 100px;
+        width: 100%;
+        background-color: rgba(255,255,255,0.07);
+        border-radius: 3px;
+        padding: 26px 10px;
         margin-top: 8px;
         font-size: 30px;
         font-weight: 300;

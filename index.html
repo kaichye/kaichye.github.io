@@ -4,6 +4,9 @@
         <script src="./Dependencies/sha512.js"></script>
         <script src="./main.js"></script>
 
+        <meta http-equiv='cache-control' content='no-cache'>
+        <meta http-equiv='expires' content='0'>
+        <meta http-equiv='pragma' content='no-cache'>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -16,20 +19,30 @@
             <div class="shape"></div>
             <div class="shape"></div>
         </div>
-        <form>
+        <form id="form">
             <h1>Welcome to Password CEO!</h1>
+            
+            <label>Phrase</label>
+            <input id="Phrase" class="field" type="text" placeholder="Phrase">
 
-            <label for="Phrase">Phrase</label>
-            <input class="field" type="text" placeholder="Phrase" id="Phrase">
+            <label>Super Secret Password (SSP)</label>
+            <input id="SSP" class="field" type="password" placeholder="SSP">
 
-            <label for="SSP">Super Secure Password (SSP)</label>
-            <input class="field" type="password" placeholder="SSP" id="SSP">
+            <input id="check" class="check" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" type="checkbox" onclick="showSSP()">
+            <span id="SSPSpan" class="checkSpan" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="showSSP()">Show SSP</span>
 
-            <input class="check" type="checkbox" id="check" onclick="showSSP()">
-            <span class="checkSpan" id="clickSpan" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="showSSP()";>Show SSP</span>
+            <button id="generateButton" type="button" style="margin-bottom: 30px;" onclick="generate()">Generate Password</button>
 
-            <button>Generate Password</button>
+            <div id="passwordLabel" class="checkSpan popup" style="visibility: hidden; margin-top: 100px;" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="copyPassword()">Generated Password (COPY)
+                <span class="popuptext" id="myPopup">Copied! Will try to auto clear in 10s</span>
+            </div>
+            
+            <div id="password" class="passField" style="visibility: hidden; display: table-cell; vertical-align: middle;" draggable="true" ondragstart="drag(event)"></div>           
+
+            <input id="checkPass" class="check" style="visibility: hidden;" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" type="checkbox" onclick="showPassword()">
+            <span id="passSpan" class="checkSpan" style="visibility: hidden;" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="showPassword()">Show Password</span>
         </form>
 
+        <input id="actualPassword" class="field" style="visibility: hidden;" type="password" disabled>
 </html>
 
