@@ -130,6 +130,9 @@ function generate() {
 
 function lengthCheck() {
     var length = document.getElementById("passwordLength");
+    if (!length.value) {
+        length.value = "16";
+    }
     if (Number(length.value) < 12) {
         length.value = "12";
     }
