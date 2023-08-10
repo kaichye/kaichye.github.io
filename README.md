@@ -15,7 +15,7 @@ With a standard password manager, if you wanted to update all your passwords, yo
 #### Instructions
 1. Think up an easy to remember phrase for each of your passwords. It could be your username or something like that.
 2. Create a Super Secret Password, whatever your would use for your password manager's master password.
-3. Enter those in to the website and you will get your generated password!
+3. Enter those in to the website and you will get your generated password! (Yes, it's supposed to be hard to see. That way, we can prevent shoulder surfing as much as possible).
 
 #### Tips
 1. On a computer, you can drag and drop the generated password (the box with dots in it) to wherever accepts text. That way, you don't have to copy or type it by hand.

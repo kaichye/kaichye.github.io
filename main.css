@@ -88,10 +88,14 @@ label{
     font-size: 14px;
     font-weight: 300;
 }
+input, textarea{
+    color: rgba(255,255,255,0.12);
+}
 .passField{
     height: 50px;
     width: 100%;
     background-color: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.12);
     border-radius: 3px;
     padding: 15px 10px;
     margin-top: 8px;
