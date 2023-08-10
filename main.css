@@ -10,7 +10,7 @@ body{
 }
 .background{
     width: 430px;
-    height: 520px;
+    height: 700px;
     position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
@@ -40,7 +40,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 630px;
+    height: 720px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -201,7 +201,7 @@ input[type=number] {
 
     form{
         width: 80%;
-        height: 1155px;
+        height: 1340px;
     }
 
     h1{
@@ -268,4 +268,31 @@ input[type=number] {
         border-radius: 5px;
         cursor: pointer;
     }
+
+    .popup {
+        position: relative;
+        cursor: pointer;
+      }
+      
+      /* The actual popup (appears on top) */
+      .popup .popuptext {
+        width: 360px;
+      }
+      
+      /* Toggle this class when clicking on the popup container (hide and show the popup) */
+      .popup .hide {
+        -webkit-animation: fadeOut 1s;
+        animation: fadeOut 1s
+      }
+      
+      /* Add animation (fade in the popup) */
+      @-webkit-keyframes fadeOut {
+        from {opacity: 1;}
+        to {opacity: 0;}
+      }
+      
+      @keyframes fadeOut {
+        from {opacity: 1;}
+        to {opacity: 0;}
+      }
 }

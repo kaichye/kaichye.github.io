@@ -91,11 +91,27 @@ function dots(passLength) {
 function generate() {
     // Super Secret Password
     var SSP = document.getElementById("SSP").value;
+    var confirmSSP = document.getElementById("confirmSSP").value;
 
     var Phrase = document.getElementById("Phrase").value;
     var passLength = Number(document.getElementById("passwordLength").value);
     var generated = ""
     
+    // make sure SSPs match
+    if (SSP != confirmSSP) {
+        var popup = document.getElementById("mismatchPopup");
+        popup.setAttribute("style","visibility:visible");
+
+        setTimeout(function() {
+            popup.classList.toggle("hide");
+        }, 4000);
+        setTimeout(function() {
+            popup.setAttribute("style","visibility:hidden");
+        }, 5000);
+
+        return;
+    }
+
     // Check if passLength is default
     if (!passLength) {
         passLength = 16;
@@ -107,9 +123,9 @@ function generate() {
     // make room on the form element for the password section
     form = document.getElementById("form");
     if (window.innerWidth > 1000) {
-        form.setAttribute("style","height:680px");
+        form.setAttribute("style","height:760px");
     } else {
-        form.setAttribute("style","height:1200px");
+        form.setAttribute("style","height:1360px");
     }
 
     // set the generated password
@@ -141,12 +157,15 @@ function lengthCheck() {
 // For showing the SSP
 function showSSP() {
     var ssp = document.getElementById("SSP");
+    var confirm = document.getElementById("confirmSSP");
     var check = document.getElementById("check");
     if (ssp.type === "password") {
         ssp.type = "text";
+        confirm.type = "text";
         check.checked = true;
     } else {
         ssp.type = "password";
+        confirm.type = "password";
         check.checked = false;
     }
 }
@@ -166,7 +185,7 @@ function copyPassword() {
     navigator.clipboard.writeText(copyText.value);
 
     var popup = document.getElementById("myPopup");
-    popup.setAttribute("style","visibility:visible");;
+    popup.setAttribute("style","visibility:visible");
 
     setTimeout(function() {
         popup.classList.toggle("hide");
