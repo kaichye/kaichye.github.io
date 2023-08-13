@@ -174,6 +174,9 @@ function SSPChange() {
     var ssp = document.getElementById("SSP");
     var check = document.getElementById("check");
     ssp.type = "password";
+    var confirm = document.getElementById("confirmSSP");
+    ssp.type = "password";
+    confirm.type = "password";
     check.checked = false;
 }
 
