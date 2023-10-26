@@ -25,7 +25,7 @@ With a standard password manager, if you wanted to update all your passwords, yo
 #### Recommendations
 1. Remember that no matter how strong your password is, MFA (Multi Factor Authentication) is always a good idea.
 2. A password with a length of 16 characters is recommended. It's not too long to type out, and it's long enough that it can't be brute forced with its hash is stolen. Note: The program does not allow your length to drop below 12 characters.
-3. Writing down your Phrases is not the end of the word. In fact, it's more secure than a hashed password because there is nothing to be cracked. But NEVER write down your SSP just like how you wouldn't write down your master password for a manager.
+3. Writing down your Phrases is not the end of the word. In fact, it's more secure than a hashed password because it can't be cracked. But NEVER write down your SSP just like how you wouldn't write down your master password for a manager.
 4. This might be a little annoying to use, compared to a password manager, so by all means use a manager if you like it better. This is just a more secure (I think) way to manage passwords.
 
 ## How does it work? (Kind of technical)
