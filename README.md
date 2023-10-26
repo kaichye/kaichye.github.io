@@ -8,7 +8,7 @@ Next generation password manager that doesn't store anything! There is no data t
 A normal password manager stores an encrypted version of all your passwords in a database that can only be unlocked with a master password. However, if that database was ever stolen, then all your passwords may be in danger! With PasswordCEO, we generate your password on the spot, meaning we don't need to store anything! All you need is one Super Secret Password (SSP) which is basically the master password to a password manager, a "Phrase" for each password you want to have, and a length. With that, you will get a unique password with all character types for every combination of SSP, Phrase, and length.
 
 #### So basically, it just doesn't store anything. Is there anything else good about it?
-With a standard password manager, if you wanted to update all your passwords, you would have to go through each stored account and update it. However, with PasswordCEO, you can update all your passwords at one just by changing your SSP! If you only want to change parts of your password or you don't want to change your SSP, then you would have to change your Phrases, but it's still just as easy as a password manager.
+With a standard password manager, if you wanted to update all your passwords, you would have to go through each stored account and update it. However, with PasswordCEO, you can update all your passwords at once just by changing your SSP! If you only want to change parts of your password or you don't want to change your SSP, then you would have to change your Phrases, but it's still just as easy as a password manager.
 
 ## Instructions, Tips, & Recommendations.
 
