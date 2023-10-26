@@ -2,7 +2,7 @@
 The boss of password managers!
 
 ## TL;DR
-Next generation password manager that doesn't store anything! There is no data to be breached, nothing to be cracked! It also allows for easy password changes!
+Next generation password manager that doesn't store anything! There is no data to be breached, nothing to be cracked!
 
 ## What is this and why is it "next generation?"
 A normal password manager stores an encrypted version of all your passwords in a database that can only be unlocked with a master password. However, if that database was ever stolen, then all your passwords may be in danger! With PasswordCEO, we generate your password on the spot, meaning we don't need to store anything! All you need is one Super Secret Password (SSP) which is basically the master password to a password manager, a "Phrase" for each password you want to have, and a length. With that, you will get a unique password with all character types for every combination of SSP, Phrase, and length.
